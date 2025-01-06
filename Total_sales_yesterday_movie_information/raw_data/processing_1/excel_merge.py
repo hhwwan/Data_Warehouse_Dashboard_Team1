@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # 병합할 엑셀 파일들이 있는 폴더 경로
-folder_path = 'C:/Users/hwan/Desktop/git_hub/Data_Warehouse_Dashboard_Team1/raw_data/processing_1'
+folder_path = 'C:/Users/hwan/Desktop/git_hub/Data_Warehouse_Dashboard_Team1/Total_sales_yesterday_movie_information/raw_data/processing_1'
 
 # 폴더 내 모든 엑셀 파일을 찾기
 excel_files = [f for f in os.listdir(folder_path) if f.endswith('.xlsx')]

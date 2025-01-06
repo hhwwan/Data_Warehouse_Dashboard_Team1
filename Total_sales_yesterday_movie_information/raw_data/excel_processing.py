@@ -6,8 +6,8 @@ import os
 """
 
 # 엑셀 파일이 있는 디렉토리 경로
-directory_path = "C:/Users/hwan/Desktop/project_2/cumulative sales"  # 수정 필요
-output_directory = "C:/Users/hwan/Desktop/project_2/cumulative sales/processing"  # 저장할 디렉토리 경로
+directory_path = "C:/Users/hwan/Desktop/git_hub/Data_Warehouse_Dashboard_Team1/Total_sales_yesterday_movie_information/raw_data" 
+output_directory = "C:/Users/hwan/Desktop/git_hub/Data_Warehouse_Dashboard_Team1/Total_sales_yesterday_movie_information/raw_data/processing_1"  # 저장할 디렉토리 경로
 
 # 디렉토리 내 모든 엑셀 파일 처리
 for filename in os.listdir(directory_path):
