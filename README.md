@@ -56,6 +56,21 @@
 `Github` `Slack` `Zep` `Notion`
 
 ## 3. 프로젝트 세부내용
-<img src="![image](https://github.com/user-attachments/assets/5cfce004-4e93-4bad-8c88-10c8dc5a8bf5)"  width="1000" height="500"/><br>
+<img src="https://github.com/user-attachments/assets/5cfce004-4e93-4bad-8c88-10c8dc5a8bf5"  width="1000" height="500"/><br>
+
+### 영화 별 매출액, 전날 관객 수
+
+### 장르 별(+기간) 관객 수
+
+### 상영관 별 관객 수
+
+### 기간(연간,월간,주간) 별 관객 수
+
+### 배우별 인지도
+
 ## 4. 프로젝트 결과
 추후 대시보드 사진 삽입
+
+### 기대효과
+
+### 개선점
