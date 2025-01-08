@@ -49,18 +49,18 @@ def main():
     전체 파이프라인 실행
     """
     # 설정 정보
-    local_file_path = "./data/movie_total_sales.csv"  # 저장 경로
+    local_file_path = "./Total_sales_yesterday_movie_information/data/movie_total_sales.csv"  # 저장 경로
 
     # S3 설정
-    bucket_name = "team1-bucket"
-    s3_file_name = "movie-data/movie_total_sales.csv"
+    bucket_name = "2nd-team1-bucket"
+    s3_file_name = "hwan/movie_total_sales.csv"
     s3_path = f"s3://{bucket_name}/{s3_file_name}"
 
-    # Redshift 설정 -> 여기서부터 수정
+    # Redshift 설정
     redshift_dsn = (
-        "postgresql://admin:Aehdghks42!@hwan-workspace.445567069161.us-west-2.redshift-serverless.amazonaws.com:5439/dev"
+        "postgresql://admin:2ndTeam1!@team1-workgroup.490004631923.us-west-2.redshift-serverless.amazonaws.com:5439/dev"
     )
-    account_id = "445567069161"
+    account_id = "490004631923"
     role = "redshift.read.s3"
     table_name = "raw_data.movie_total_sales"
 

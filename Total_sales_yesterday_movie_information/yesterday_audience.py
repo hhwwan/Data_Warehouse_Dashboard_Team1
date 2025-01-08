@@ -1,3 +1,5 @@
+import schedule
+import time
 import requests
 import csv
 import boto3
@@ -138,18 +140,18 @@ def main():
     # 조회날짜
     yesterday = datetime.now() - timedelta(days=1)
     target_date = yesterday.strftime("%Y%m%d")  # 조회 날짜 (YYYYMMDD 포맷)
-    local_file_path = "./data/daily_box_office.csv"  # 저장 경로
+    local_file_path = "./Total_sales_yesterday_movie_information/data/daily_box_office.csv"  # 저장 경로
 
     # S3 설정
-    bucket_name = "hwan-test-bucket"
-    s3_file_name = "test-data/daily_box_office.csv"
+    bucket_name = "2nd-team1-bucket"
+    s3_file_name = "hwan/daily_box_office.csv"
     s3_path = f"s3://{bucket_name}/{s3_file_name}"
 
     # Redshift 설정
     redshift_dsn = (
-        "postgresql://admin:Aehdghks42!@hwan-workspace.445567069161.us-west-2.redshift-serverless.amazonaws.com:5439/dev"
+        "postgresql://admin:2ndTeam1!@team1-workgroup.490004631923.us-west-2.redshift-serverless.amazonaws.com:5439/dev"
     )
-    account_id = "445567069161"
+    account_id = "490004631923"
     role = "redshift.read.s3"
     table_name = "raw_data.yesterday_audience"
 
@@ -178,5 +180,14 @@ def main():
     except Exception as e:
         print(f"오류 발생: {e}")
 
-if __name__ == "__main__":
-    main()
+# 스케줄링 설정
+schedule.every().day.at("09:00").do(main)
+
+print("스케줄러가 실행 중입니다. 프로그램을 종료하지 마세요.")
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
+# if __name__ == "__main__":
+#     main()
