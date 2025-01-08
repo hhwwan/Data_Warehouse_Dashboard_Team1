@@ -5,6 +5,7 @@ import csv
 import boto3
 import psycopg2
 import os
+import const
 from datetime import datetime, timedelta
 
 def fetch_box_office_data(api_key, target_date, local_file_path):
@@ -136,25 +137,22 @@ def main():
     전체 파이프라인 실행
     """
     # 설정 정보
-    api_key = "59d9ade99e237278bcb364de7ae8c0a7"  # API 키
+    api_key = const.API_KEY  # API 키
     # 조회날짜
     yesterday = datetime.now() - timedelta(days=1)
     target_date = yesterday.strftime("%Y%m%d")  # 조회 날짜 (YYYYMMDD 포맷)
     local_file_path = "./Total_sales_yesterday_movie_information/data/daily_box_office.csv"  # 저장 경로
 
     # S3 설정
-    bucket_name = "2nd-team1-bucket"
-    s3_file_name = "hwan/daily_box_office.csv"
+    bucket_name = const.BUCKET_NAME
+    s3_file_name = const.S3_FILE_NAME
     s3_path = f"s3://{bucket_name}/{s3_file_name}"
 
     # Redshift 설정
-    redshift_dsn = (
-        "postgresql://admin:2ndTeam1!@team1-workgroup.490004631923.us-west-2.redshift-serverless.amazonaws.com:5439/dev"
-    )
-    account_id = "490004631923"
-    role = "redshift.read.s3"
-    table_name = "raw_data.yesterday_audience"
-
+    redshift_dsn = const.REDSHIFT_DSN
+    account_id = const.ACCOUNT_ID
+    role = const.ROLE
+    table_name = const.TABLE_NAME
     try:
         # 데이터 수집
         print("API에서 데이터 수집 중...")

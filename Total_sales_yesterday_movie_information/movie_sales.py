@@ -1,5 +1,6 @@
 import boto3
 import psycopg2
+import const
 import os
 
 def upload_to_s3(local_file_path, bucket_name, s3_file_name):
@@ -52,17 +53,15 @@ def main():
     local_file_path = "./Total_sales_yesterday_movie_information/data/movie_total_sales.csv"  # 저장 경로
 
     # S3 설정
-    bucket_name = "2nd-team1-bucket"
-    s3_file_name = "hwan/movie_total_sales.csv"
+    bucket_name = const.BUCKET_NAME
+    s3_file_name = const.S3_FILE_NAME
     s3_path = f"s3://{bucket_name}/{s3_file_name}"
 
     # Redshift 설정
-    redshift_dsn = (
-        "postgresql://admin:2ndTeam1!@team1-workgroup.490004631923.us-west-2.redshift-serverless.amazonaws.com:5439/dev"
-    )
-    account_id = "490004631923"
-    role = "redshift.read.s3"
-    table_name = "raw_data.movie_total_sales"
+    redshift_dsn = const.REDSHIFT_DSN
+    account_id = const.ACCOUNT_ID
+    role = const.ROLE
+    table_name = const.TABLE_NAME
 
     try:
         # S3 업로드
