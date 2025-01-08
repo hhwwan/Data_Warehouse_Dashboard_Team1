@@ -54,14 +54,14 @@ def main():
 
     # S3 설정
     bucket_name = const.BUCKET_NAME
-    s3_file_name = const.S3_FILE_NAME
+    s3_file_name = const.SALES_S3_FILE_NAME
     s3_path = f"s3://{bucket_name}/{s3_file_name}"
 
     # Redshift 설정
     redshift_dsn = const.REDSHIFT_DSN
     account_id = const.ACCOUNT_ID
     role = const.ROLE
-    table_name = const.TABLE_NAME
+    table_name = const.SALES_TABLE_NAME
 
     try:
         # S3 업로드

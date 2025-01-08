@@ -145,14 +145,14 @@ def main():
 
     # S3 설정
     bucket_name = const.BUCKET_NAME
-    s3_file_name = const.S3_FILE_NAME
+    s3_file_name = const.YESTERDAY_S3_FILE_NAME
     s3_path = f"s3://{bucket_name}/{s3_file_name}"
 
     # Redshift 설정
     redshift_dsn = const.REDSHIFT_DSN
     account_id = const.ACCOUNT_ID
     role = const.ROLE
-    table_name = const.TABLE_NAME
+    table_name = const.YESTERDAY_TABLE_NAME
     try:
         # 데이터 수집
         print("API에서 데이터 수집 중...")
