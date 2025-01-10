@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 데이터 웨어하우스를 이용한 대시보드 구성
 ## 주제: 영화 트렌드 대시보드
 ## Programmers 데브코스 Data Engineering 5기 
