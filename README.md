@@ -59,6 +59,7 @@
 <img src="https://github.com/user-attachments/assets/5cfce004-4e93-4bad-8c88-10c8dc5a8bf5"  width="1000" height="500"/><br>
 
 ### 영화 별 매출액, 전날 관객 수
+<img src="https://github.com/user-attachments/assets/503a92c2-7141-419f-a8fb-e58560f91764"  width="800" height="1000"/><br>
 #### 데이터 수집
 ##### 영화 별 매출액 
 -영화진흥위원회(KOFIC)의 영화관입장권 통합전산망에서 개봉일 기준 최근 5년치 (2020 ~ 2024) 데이터를 1년치 단위로 수집하였습니다.
@@ -79,6 +80,7 @@
 파이썬 schedule 라이브러리를 활용하여 작성하였습니다. 
 
 ### 장르 별(+기간) 관객 수
+<img src="https://github.com/user-attachments/assets/1ee9c984-23d1-4451-bd7a-423627fc9310"  width="1000" height="800"/><br>
 #### 데이터 수집
 - Selenium을 활용하여 영화진흥위원회(KOFIC)의 영화관입장권 통합전산망에서 2019년 12월 17일부터 약 5년간의 일별 박스오피스 데이터를 1주일 단위로 수집하였습니다
 - KOFIC 웹사이트에서 데이터를 수집하기 위해 데이터 수집 시작일을 설정한 뒤, HTML 클래스 이름 또는 Xpath를 기반으로 달력 아이콘, 연도, 월, 일 선택 버튼, 조회 버튼, 그리고 엑셀 다운로드 버튼의 위치를 식별하고 클릭 액션을 사용하였습니다. 또한, 다운로드 시 나타나는 시간이 걸릴 수 있다는 팝업 창을 닫는 액션을 추가하여 프로세스를 자동화했습니다. 약 5년간의 데이터를 수집하였으며, 1주일 치 데이터를 다운로드할 때 생성되는 파일에는 데이터가 일 단위로 구분되어 저장하였습니다.
@@ -88,10 +90,12 @@
 - 일부 영화는 1개 이상의 장르를 가질 수 있으므로, NaN 값을 제거한 뒤 영화와 장르를 1대1로 매핑했습니다. 이후, 해당 영화의 관객 수가 포함된 데이터프레임을 생성하고 이를 CSV 파일로 저장하였습니다.
 
 ### 상영관 별 관객 수
+<img src="https://github.com/user-attachments/assets/2ccc3496-d583-479a-9a34-633a09ff1518"  width="1000" height="800"/><br>
 #### 데이터 수집
 #### 데이터 전처리
 
 ### 기간(연간,월간,주간) 별 관객 수
+<img src="https://github.com/user-attachments/assets/c8ef18a9-8b17-4ed4-9856-d1670d9d3cca"  width="1000" height="800"/><br>
 #### 데이터 수집
 - 영화진흥위원회(KOFIC) 사이트에서 주간/월간/연간 박스오피스 정보를 제공하고 있습니다. 해당 사이트를 크롤링 하여 필요한 엑셀 파일을 다운로드 하였습니다.
 - 데이터는 2020년 1월 부터 2024년 12월까지의 데이터를 수집하였습니다.
@@ -100,6 +104,11 @@
 - xlsx 파일 형식으로 엑셀을 정상적으로 로드하면 데이터만 추출 하여 csv 파일로 만들었습니다.
 
 ### 배우별 인지도
+<img src="https://github.com/user-attachments/assets/5d386883-3e67-4229-88fb-e77006c18c1d"  width="450" height="400"/>
+<img src="https://github.com/user-attachments/assets/591eb849-9d5b-492e-a958-b58e90901a48"  width="450" height="400"/>
+<img src="https://github.com/user-attachments/assets/789e7121-7454-40c2-91c9-cc7fa2c552c5"  width="450" height="400"/>
+<img src="https://github.com/user-attachments/assets/afed85ab-8e59-4a42-93ad-7b3f610e5c78"  width="450" height="400"/><br>
+
 #### 데이터 수집
 - 초기 프로젝트 기간 전 상단의 KOFIC 사이트에서 박스오피스 정보를 엑셀로 저장 받아 이를 통합하는 과정을 거쳤습니다. selenium 활용으로 기간 설정을 변경해 5년치 데이터를 받아서 이를 통합, 중요 과정으로 utf-8-sig 설정과 기간이 겹치지 않는 것을 확인 등이 있었습니다.
 #### 데이터 전처리
