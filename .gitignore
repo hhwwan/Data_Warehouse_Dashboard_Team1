@@ -1,0 +1,7 @@
+# 데이터 폴더
+downloads/
+excel/
+__pycache__
+
+#
+redshift_info.py
